@@ -12,6 +12,11 @@
 
 #include "caffe/util/bbox_util.hpp"
 
+#if (CV_MAJOR_VERSION >= 4)
+#define CV_FILLED cv::FILLED
+#define CV_FOURCC cv::VideoWriter::fourcc
+#endif
+
 namespace caffe {
 
 bool SortBBoxAscend(const NormalizedBBox& bbox1, const NormalizedBBox& bbox2) {
