@@ -61,6 +61,10 @@ if(@USE_LEVELDB@ AND @LEVELDB_IMPORTED@)
   endif()
 endif()
 
+if(@USE_MATIO@ AND @MATIO_IMPORTED@)
+  find_package(MATIO REQUIRED NO_MODULE)
+endif()
+
 # Compute paths
 get_filename_component(Caffe_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
 
